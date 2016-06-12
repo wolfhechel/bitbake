@@ -1755,11 +1755,6 @@ class RunQueueExecuteScenequeue(RunQueueExecute):
         # therefore aims to collapse the huge runqueue dependency tree into a smaller one
         # only containing the setscene functions.
 
-        for task in range(self.stats.total):
-            self.runq_running.append(0)
-            self.runq_complete.append(0)
-            self.runq_buildable.append(0)
-
         # First process the chains up to the first setscene task.
         endpoints = {}
         for task in range(len(self.rqdata.runq_fnid)):
